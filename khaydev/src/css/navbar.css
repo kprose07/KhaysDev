@@ -1,0 +1,27 @@
+.container {
+  margin: 0px !important;
+  justify-content: flex-start;
+  padding: 0px;
+}
+.navbar {
+  padding: 10px;
+  background-color: transparent;
+  position: absolute;
+}
+.navLink {
+  color: var(--wg) !important;
+  font-family: "Klee One", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.navLink:hover{
+  background-color: var(--wg);
+  color: var(--green) !important;
+}
+#navlogo {
+  width: 60px;
+}
+a.navbar-brand {
+  margin: 0px;
+  margin-right: 5px;
+}
