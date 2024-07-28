@@ -33,10 +33,17 @@ function home() {
           </div>
         </div>
         <div className="section_three">
-          <p className="sthrHead">About</p>
+          <p className="Head">About</p>
           <div className="cards"></div>
         </div>
-        <div className="section_four"></div>
+        <div className="section_four">
+          <p className="Head">Skills</p>
+        </div>
+        <div className="section_five">
+          <p id="proj" className="Head">
+            Projects
+          </p>
+        </div>
       </div>
     </>
   );
