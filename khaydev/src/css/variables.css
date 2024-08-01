@@ -6,6 +6,9 @@
     --blue:#87ABAC;
     --lightb:#E3E3E3;
     --brown:#9C9696;
+    --lgreen:#E3E3E3;
+    --lbrown:#D7CDCD;
+    --steps: 14; 
 }
 /* body{
     font-family: "Klee One", cursive;

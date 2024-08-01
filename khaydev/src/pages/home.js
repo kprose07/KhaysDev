@@ -1,20 +1,47 @@
-import React from "react";
-
-// CSS
+import React, { useEffect, useRef } from "react";
 import "../css/home.css";
 import "../css/variables.css";
-
-//images
 import soBG from "../imgs/sectionbg.png";
+import Me from "../imgs/me.png";
+import Cards from "../components/AboutCards";
+import Skills from "../components/skills";
 
-function home() {
+function Home() {
+  const sectionTwoRef = useRef(null);
+  const typingTextRef = useRef(null);
+
+  useEffect(() => {
+    const handleTypingAnimationEnd = () => {
+      if (sectionTwoRef.current) {
+        sectionTwoRef.current.classList.add("visible");
+        sectionTwoRef.current.scrollIntoView({ behavior: "smooth" });
+      }
+    };
+
+    const typingText = typingTextRef.current;
+    if (typingText) {
+      typingText.addEventListener("animationend", handleTypingAnimationEnd);
+    }
+
+    return () => {
+      if (typingText) {
+        typingText.removeEventListener(
+          "animationend",
+          handleTypingAnimationEnd
+        );
+      }
+    };
+  }, []);
+
   return (
     <>
       <div className="home_contain">
         <div className="section_one">
-          <p id="so_text">Introducing...</p>
+          <p id="so_text" className="typing-effect" ref={typingTextRef}>
+            Introducing...
+          </p>
         </div>
-        <div className="section_two">
+        <div className="section_two fade-in" ref={sectionTwoRef}>
           <div className="stco">
             <p className="so_HeadText">Khaylah Rose</p>
             <p className="so_SubText">Fullstack Developer</p>
@@ -29,24 +56,34 @@ function home() {
             <button id="resume">Resume</button>
           </div>
           <div className="stct">
-            <div className="profImage"></div>
+            <div className="profImage">
+              <img src={Me} alt="Me" />
+            </div>
           </div>
         </div>
         <div className="section_three">
           <p className="Head">About</p>
-          <div className="cards"></div>
+          <div className="cards">
+            <Cards />
+          </div>
         </div>
         <div className="section_four">
           <p className="Head">Skills</p>
+          <Skills />
         </div>
         <div className="section_five">
           <p id="proj" className="Head">
-            Projects
+            Top Projects
           </p>
+          <div className="p_cards">
+            <div className="cardo pcard"></div>
+            <div className="cardt pcard"></div>
+            <div className="cardth pcard"></div>
+          </div>
         </div>
       </div>
     </>
   );
 }
 
-export default home;
+export default Home;

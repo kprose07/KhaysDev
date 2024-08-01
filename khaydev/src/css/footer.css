@@ -1,0 +1,26 @@
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0px; /* Initially hidden below the viewport */
+    transition: bottom 2s ease-in-out;
+    width:100%;
+    height: 100px;
+    background-color: var(--lgreen);
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    overflow: hidden;
+    padding: 10px;
+}
+footer img{
+    width: 5%;
+    height: 70%;
+}
+/* variables.css */
+
+/* Footer hidden state */
+
+  /* Footer visible state */
+  .footer.show {
+    bottom: 0; /* Slide up into view */
+  }

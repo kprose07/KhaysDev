@@ -4,6 +4,8 @@
     display: flex;
     flex-direction: column;
     background-color: black;
+    -webkit-user-select: none;
+
 }
 /* Section One */
 .section_one{
@@ -20,7 +22,36 @@
 #so_text{
     color: var(--wg);
     font-size: 64px;
+    text-align: center;
+    width:max-content;
 }
+/* CSS for typing animation */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 90%; }
+  }
+  
+  .typing-effect {
+    overflow-x: hidden !important;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid black; /* Adjust to match your design */
+    animation: typing 5s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--wg); }
+  }
+  /* CSS for fade-in effect */
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .fade-in.visible {
+    opacity: 1;
+  }
 /* Section Two */
 .section_two{
     width: 100%;
@@ -29,8 +60,11 @@
     display: flex;
     justify-content: center;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 50px;
     align-items: center;
+    /* margin-top: 10px;
+    margin-bottom: 10px; */
 }
 .stco{
     display: flex;
@@ -68,29 +102,43 @@ p{
 }
 .stct{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: baseline;
+    align-items:baseline;
     width:max-content;
     height:400px;
 }
 .profImage{
     width: 300px;
-    height: 300px;
-    background-color: var(--wg);
+    height: 100%;
+    
+}
+.profImage image{
+    width: 100%;
+    height: 100%;
 }
 /* section Three */
 .section_three{
     width: 100%;
-    height:600px;
+    height:max-content;
     background-color: var(--lightb);
     display: flex;
     /* justify-content: center; */
     flex-direction: column;
     align-items: center;
+    overflow-y: hidden;
+    z-index: 20;
+}
+.cards{
+    width: 100%;
+    height: max-content;
+    padding-bottom: 50px;
 }
 .Head{
-    margin-top: 5%;
+    margin-top: 2%;
     font-size: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--wg);
 }
 .section_four{
     width: 100%;
@@ -99,7 +147,7 @@ p{
     display: flex;
     /* justify-content: center; */
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 }
 .section_five{
     width: 100%;
@@ -114,4 +162,23 @@ p{
 }
 #proj{
     color: var(--wg);
+    margin-bottom: 50px;
+}
+.p_cards{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap:60px;
+    width:100%;
+    height:max-content;
+    align-content: center;
+    justify-content: center;
+
+}
+.pcard{
+    width: 400px;
+    height: 380px;
+    background-color: white;
+    filter: drop-shadow(0 0 0.75rem black);
+    border-radius: 20px;
 }
