@@ -76,9 +76,32 @@ function Home() {
             Top Projects
           </p>
           <div className="p_cards">
-            <div className="cardo pcard"></div>
-            <div className="cardt pcard"></div>
-            <div className="cardth pcard"></div>
+            <div className="cardp">
+              <div className="pcardo"></div>
+              <a href="https://turnerscleaningservice.com/">
+                Turner's Cleaning
+              </a>
+            </div>
+            <div className="cardp">
+              <div className="pcardt"></div>
+              <a href="https://github.com/AATechCulture/TiCode">
+                BE SMART Hackathon
+              </a>
+            </div>
+            <div className="cardp">
+              <div className="pcardth"></div>
+
+              <a href="https://devpost.com/software/mediscan-b6ln1m">
+                Lily hackathon
+              </a>
+            </div>
+            <div className="cardp">
+              <div className="pcardf"></div>
+
+              <a href="https://www.linkedin.com/pulse/meet-youth-tackling-challenges-south-african-education-usaid/">
+                USAID Case study
+              </a>
+            </div>
           </div>
         </div>
       </div>
