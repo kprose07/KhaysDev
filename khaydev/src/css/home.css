@@ -22,12 +22,25 @@ overflow-x: hidden;
     background-position: center;
 }
 
-#so_text {
+@keyframes fadeInSlideUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  #so_text {
     color: var(--wg);
     font-size: 64px;
     text-align: center;
     width: max-content;
-}
+    opacity: 0; /* Start hidden */
+    animation: fadeInSlideUp 4s ease-out forwards; /* Apply new animation */
+  }
 
 /* CSS for typing animation */
 @keyframes typing {
@@ -62,7 +75,7 @@ overflow-x: hidden;
 /* CSS for fade-in effect */
 .fade-in {
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 2s ease-in-out;
 }
 
 .fade-in.visible {
@@ -123,12 +136,23 @@ p {
     width: 100px;
     height: 50px;
     margin-top: 25px;
-    outline: 0px;
+    outline: 0;
     border: none;
     background-color: var(--blue);
     color: white;
     border-radius: 10px;
-}
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+  
+  #resume:hover {
+    background-color:white;
+    border: 3px solid var(--blue);
+    color: var(--blue);
+  }
 
 .stct {
     display: flex;

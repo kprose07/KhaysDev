@@ -1,6 +1,4 @@
-import React from "react";
-
-// css
+import React, { useEffect, useRef } from "react";
 import "../css/skills.css";
 
 function Skills() {
@@ -32,6 +30,33 @@ function Skills() {
     "Android Studio",
   ];
 
+  const skillRefs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+      }
+    );
+
+    skillRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => {
+      skillRefs.current.forEach((ref) => {
+        if (ref) observer.unobserve(ref);
+      });
+    };
+  }, []);
+
   return (
     <div>
       <div className="skills_cont">
@@ -39,7 +64,11 @@ function Skills() {
           <p className="head_skills">Front End</p>
           <div className="skills_tags_cont">
             {Fskils.map((skill, index) => (
-              <p key={index} className="skill_tag">
+              <p
+                key={index}
+                className="skill_tag"
+                ref={(el) => (skillRefs.current[index] = el)}
+              >
                 {skill}
               </p>
             ))}
@@ -50,7 +79,11 @@ function Skills() {
           <p className="head_skills">Back End</p>
           <div className="skills_tags_cont">
             {Bskils.map((skill, index) => (
-              <p key={index} className="skill_tag">
+              <p
+                key={index + Fskils.length}
+                className="skill_tag"
+                ref={(el) => (skillRefs.current[index + Fskils.length] = el)}
+              >
                 {skill}
               </p>
             ))}

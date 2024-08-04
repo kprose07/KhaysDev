@@ -34,17 +34,32 @@
     padding: 20px;
 
 }
-.skill_tag{
-    color:var(--brown);
-    text-align: center;
-    width:max-content;
-    /* filter: drop-shadow(0 0 0.1rem black); */
+/* skills.css */
 
+@keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .skill_tag {
+    color: var(--brown);
+    text-align: center;
+    width: max-content;
     background-color: var(--lbrown);
     font-size: 18px;
-    padding: 8px;
-    padding-left: 40px;
-    padding-right: 40px;
-    /* border: 2px solid black; */
-
-}
+    padding: 8px 40px;
+    opacity: 0; /* Start hidden */
+    transform: translateX(-100%); /* Start out of view */
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+  }
+  
+  .skill_tag.visible {
+    animation: slideIn 0.5s forwards;
+  }
+  

@@ -2,7 +2,7 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { Link, useLocation, Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 // CSS
 import "../css/navbar.css";
 // Images
@@ -25,9 +25,9 @@ function NavBar() {
               <Nav.Link as={Link} to="/Services" className="navLink">
                 Services
               </Nav.Link>
-              <Nav.Link as={Link} to="/FAQ" className="navLink">
+              {/* <Nav.Link as={Link} to="/FAQ" className="navLink">
                 FAQ's
-              </Nav.Link>
+              </Nav.Link> */}
             </Nav>
           </Navbar.Collapse>
         </Container>

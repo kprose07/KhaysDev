@@ -1,34 +1,31 @@
 import React, { useEffect, useRef } from "react";
 import "../css/home.css";
 import "../css/variables.css";
-import soBG from "../imgs/sectionbg.png";
+// import soBG from "../imgs/sectionbg.png";
 import Me from "../imgs/me.png";
 import Cards from "../components/AboutCards";
 import Skills from "../components/skills";
 
 function Home() {
   const sectionTwoRef = useRef(null);
-  const typingTextRef = useRef(null);
+  const introducingTextRef = useRef(null);
 
   useEffect(() => {
-    const handleTypingAnimationEnd = () => {
+    const handleAnimationEnd = () => {
       if (sectionTwoRef.current) {
         sectionTwoRef.current.classList.add("visible");
         sectionTwoRef.current.scrollIntoView({ behavior: "smooth" });
       }
     };
 
-    const typingText = typingTextRef.current;
-    if (typingText) {
-      typingText.addEventListener("animationend", handleTypingAnimationEnd);
+    const introducingText = introducingTextRef.current;
+    if (introducingText) {
+      introducingText.addEventListener("animationend", handleAnimationEnd);
     }
 
     return () => {
-      if (typingText) {
-        typingText.removeEventListener(
-          "animationend",
-          handleTypingAnimationEnd
-        );
+      if (introducingText) {
+        introducingText.removeEventListener("animationend", handleAnimationEnd);
       }
     };
   }, []);
@@ -37,7 +34,7 @@ function Home() {
     <>
       <div className="home_contain">
         <div className="section_one">
-          <p id="so_text" className="typing-effect" ref={typingTextRef}>
+          <p id="so_text" ref={introducingTextRef}>
             Introducing...
           </p>
         </div>
@@ -53,7 +50,9 @@ function Home() {
               skills in computer engineering to drive positive change within our
               community. Let's build the future together!
             </p>
-            <button id="resume">Resume</button>
+            <a id="resume" href="/resume.pdf" download>
+              Resume
+            </a>
           </div>
           <div className="stct">
             <div className="profImage">

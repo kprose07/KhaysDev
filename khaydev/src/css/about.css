@@ -77,7 +77,9 @@
   
   .card__background{
     background-size: cover;
-    background-position: top;
+    background-position: center;
+    background-color: var(--blue);
+
     border-radius: var(--spacing-l);
     bottom: 0;
     filter: brightness(0.75) saturate(1.2) contrast(0.85);
@@ -94,6 +96,9 @@
   
   .card:hover .card__background{
     transform: scale(1.05) translateZ(0);
+    /* opacity: 0.7; */
+    filter:contrast(0.3) blur(5px) ;
+
   }
   
   .card-grid:hover > .card:not(:hover) .card__background{
@@ -102,7 +107,7 @@
 
   .card p{
     display: none;
-    font-size: 14.5px;
+    font-size: 13px;
     color:white;
   }
   .card:hover p{
