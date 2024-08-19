@@ -1,7 +1,7 @@
 {
+  "homepage": "https://kprose07.github.io/khaysdev",
   "name": "khaydev",
   "version": "0.1.0",
-  "homepage": "https://kprose07.github.io/khaysdev",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
