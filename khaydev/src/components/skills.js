@@ -46,12 +46,13 @@ function Skills() {
       }
     );
 
-    skillRefs.current.forEach((ref) => {
+    const refs = skillRefs.current;
+    refs.forEach((ref) => {
       if (ref) observer.observe(ref);
     });
 
     return () => {
-      skillRefs.current.forEach((ref) => {
+      refs.forEach((ref) => {
         if (ref) observer.unobserve(ref);
       });
     };
